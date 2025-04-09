@@ -25,7 +25,7 @@ class _SignUpState extends State<SignUp> {
       ),
       body: Column(
         children: [
-          Expanded(child: Image.asset(AssetsManager.logo)),
+          Expanded(child: Image.asset(imagesAssets.logo)),
           SizedBox(
             height: 24.h,
           ),

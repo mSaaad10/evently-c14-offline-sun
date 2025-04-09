@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AssetsManager.google),
+            Image.asset(imagesAssets.google),
             SizedBox(
               width: 8.w,
             ),

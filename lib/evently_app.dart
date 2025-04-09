@@ -1,5 +1,5 @@
 import 'package:evently/config/theme/theme_manager.dart';
-import 'package:evently/core/resources/routes/reoutes_manager.dart';
+import 'package:evently/core/routes/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +15,7 @@ class EventlyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RoutesManager.router,
-        initialRoute: RoutesManager.signUp,
+        initialRoute: RoutesManager.mainLayout,
         theme: ThemeManager.light,
         darkTheme: ThemeManager.dark,
         themeMode: ThemeMode.light,

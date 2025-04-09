@@ -27,7 +27,7 @@ class _SignInState extends State<SignIn> {
             children: [
               Expanded(
                 child: Image.asset(
-                  AssetsManager.logo,
+                  imagesAssets.logo,
                 ),
               ),
               SizedBox(
