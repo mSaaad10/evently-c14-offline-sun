@@ -5,6 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeManager {
   static final ThemeData light = ThemeData(
+      appBarTheme: AppBarTheme(
+          backgroundColor: ColorsManager.light,
+          centerTitle: true,
+          titleTextStyle: GoogleFonts.roboto(
+              fontSize: 18,
+              fontWeight: FontWeight.normal,
+              color: ColorsManager.black)),
       scaffoldBackgroundColor: ColorsManager.light,
       iconTheme: const IconThemeData(color: ColorsManager.grey),
       textButtonTheme: TextButtonThemeData(),
@@ -39,25 +46,26 @@ class ThemeManager {
         ),
       ),
       textTheme: TextTheme(
-          labelSmall: GoogleFonts.inter(
+        labelSmall: GoogleFonts.inter(
+          fontSize: 16.sp,
+          color: ColorsManager.grey,
+          fontWeight: FontWeight.w500,
+        ),
+        titleSmall: GoogleFonts.inter(
             fontSize: 16.sp,
-            color: ColorsManager.grey,
-            fontWeight: FontWeight.w500,
-          ),
-          titleSmall: GoogleFonts.inter(
-              fontSize: 16.sp,
-              color: ColorsManager.blue,
-              fontWeight: FontWeight.w500,
-              decoration: TextDecoration.underline,
-              decorationColor: ColorsManager.blue),
-          labelMedium: GoogleFonts.inter(
-            fontSize: 20.sp,
             color: ColorsManager.blue,
             fontWeight: FontWeight.w500,
-          ),
-          titleMedium: GoogleFonts.inter(
-              fontSize: 20.sp,
-              color: ColorsManager.white,
-              fontWeight: FontWeight.w600)));
+            decoration: TextDecoration.underline,
+            decorationColor: ColorsManager.blue),
+        labelMedium: GoogleFonts.inter(
+          fontSize: 20.sp,
+          color: ColorsManager.blue,
+          fontWeight: FontWeight.w500,
+        ),
+        titleMedium: GoogleFonts.inter(
+            fontSize: 20.sp,
+            color: ColorsManager.white,
+            fontWeight: FontWeight.w600),
+      ));
   static final ThemeData dark = ThemeData();
 }

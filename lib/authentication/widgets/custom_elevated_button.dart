@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomTextButton extends StatelessWidget {
-  const CustomTextButton(
+class CustomElevatedButton extends StatelessWidget {
+  const CustomElevatedButton(
       {super.key, required this.title, required this.onClick});
 
   final String title;
@@ -9,13 +9,11 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+    return ElevatedButton(
         onPressed: onClick,
         child: Text(
-          title,
-          textAlign: TextAlign.end,
-          style: Theme.of(context).textTheme.titleSmall,
+          "Sign-In",
+          style: Theme.of(context).textTheme.titleMedium,
         ));
   }
 }
