@@ -15,4 +15,8 @@ class SvgIconsAssets {
   static const String selectedMaps = "$base/selected_maps_icon.svg";
   static const String selectedFav = "$base/selected_fav_icon.svg";
   static const String selectedProfile = "$base/selected_profile_icon.svg";
+  static const String allCategories = "$base/all_icon.svg";
+  static const String birthDayCategory = "$base/birthday_icon.svg";
+  static const String bookClubCategory = "$base/book_icon.svg";
+  static const String sportsCategory = "$base/sports_icon.svg";
 }

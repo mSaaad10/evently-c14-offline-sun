@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeManager {
   static final ThemeData light = ThemeData(
+      primaryColor: ColorsManager.blue,
       useMaterial3: false,
       appBarTheme: AppBarTheme(
           backgroundColor: ColorsManager.light,
@@ -20,7 +21,7 @@ class ThemeManager {
               side: BorderSide(color: ColorsManager.white, width: 4)),
           backgroundColor: ColorsManager.blue,
           foregroundColor: ColorsManager.white),
-      bottomAppBarTheme: BottomAppBarTheme(
+      bottomAppBarTheme: const BottomAppBarTheme(
         shape: CircularNotchedRectangle(),
         color: ColorsManager.blue,
       ),
@@ -31,8 +32,11 @@ class ThemeManager {
         selectedItemColor: ColorsManager.white,
         unselectedItemColor: ColorsManager.white,
       ),
-      iconTheme: const IconThemeData(color: ColorsManager.grey),
-      textButtonTheme: TextButtonThemeData(),
+      iconTheme: const IconThemeData(color: ColorsManager.white),
+      tabBarTheme: TabBarTheme(
+        indicatorColor: Colors.transparent,
+        tabAlignment: TabAlignment.start,
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
@@ -64,26 +68,10 @@ class ThemeManager {
         ),
       ),
       textTheme: TextTheme(
-        labelSmall: GoogleFonts.inter(
-          fontSize: 16.sp,
-          color: ColorsManager.grey,
-          fontWeight: FontWeight.w500,
-        ),
         titleSmall: GoogleFonts.inter(
-            fontSize: 16.sp,
-            color: ColorsManager.blue,
-            fontWeight: FontWeight.w500,
-            decoration: TextDecoration.underline,
-            decorationColor: ColorsManager.blue),
-        labelMedium: GoogleFonts.inter(
-          fontSize: 20.sp,
-          color: ColorsManager.blue,
-          fontWeight: FontWeight.w500,
-        ),
-        titleMedium: GoogleFonts.inter(
-            fontSize: 20.sp,
+            fontSize: 14.sp,
             color: ColorsManager.white,
-            fontWeight: FontWeight.w600),
+            fontWeight: FontWeight.normal),
       ));
   static final ThemeData dark = ThemeData();
 }
