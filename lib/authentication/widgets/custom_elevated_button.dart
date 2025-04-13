@@ -12,8 +12,7 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: onClick,
         child: Text(
-          "Sign-In",
-          style: Theme.of(context).textTheme.titleMedium,
+         title,
         ));
   }
 }

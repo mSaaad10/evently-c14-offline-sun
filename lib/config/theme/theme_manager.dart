@@ -5,15 +5,23 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeManager {
   static final ThemeData light = ThemeData(
+      cardColor: ColorsManager.light,
+      cardTheme: CardTheme(
+        color: ColorsManager.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+      ),
       primaryColor: ColorsManager.blue,
       useMaterial3: false,
       appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: ColorsManager.blue),
           backgroundColor: ColorsManager.light,
           centerTitle: true,
           titleTextStyle: GoogleFonts.roboto(
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.normal,
-              color: ColorsManager.black)),
+              color: ColorsManager.blue)),
       scaffoldBackgroundColor: ColorsManager.light,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
           iconSize: 24,
@@ -32,19 +40,38 @@ class ThemeManager {
         selectedItemColor: ColorsManager.white,
         unselectedItemColor: ColorsManager.white,
       ),
-      iconTheme: const IconThemeData(color: ColorsManager.white),
-      tabBarTheme: TabBarTheme(
+      iconTheme: const IconThemeData(color: ColorsManager.black),
+      tabBarTheme: const TabBarTheme(
         indicatorColor: Colors.transparent,
         tabAlignment: TabAlignment.start,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
+            textStyle: GoogleFonts.inter(
+                fontSize: 18.sp,
+                color: ColorsManager.white,
+                fontWeight: FontWeight.w500),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16.r)),
             backgroundColor: ColorsManager.blue,
             padding: REdgeInsets.symmetric(vertical: 16)),
       ),
+      textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+              foregroundColor: ColorsManager.blue,
+              textStyle: GoogleFonts.inter(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.bold,
+                  color: ColorsManager.blue,
+                  fontStyle: FontStyle.italic,
+                  decoration: TextDecoration.underline))),
       inputDecorationTheme: InputDecorationTheme(
+        hintStyle: GoogleFonts.inter(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            color: ColorsManager.grey),
+        prefixIconColor: ColorsManager.grey,
+        suffixIconColor: ColorsManager.grey,
         iconColor: ColorsManager.grey,
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14.r),
@@ -68,10 +95,26 @@ class ThemeManager {
         ),
       ),
       textTheme: TextTheme(
-        titleSmall: GoogleFonts.inter(
-            fontSize: 14.sp,
-            color: ColorsManager.white,
-            fontWeight: FontWeight.normal),
-      ));
+          titleSmall: GoogleFonts.inter(
+              fontSize: 14.sp,
+              color: ColorsManager.white,
+              fontWeight: FontWeight.normal),
+          bodyMedium: GoogleFonts.inter(
+            fontSize: 14,
+            color: ColorsManager.black,
+            fontWeight: FontWeight.bold,
+          ),
+          titleMedium: GoogleFonts.inter(
+              fontSize: 20.sp,
+              color: ColorsManager.blue,
+              fontWeight: FontWeight.w500),
+          bodySmall: GoogleFonts.inter(
+              fontSize: 16,
+              color: ColorsManager.blue,
+              fontWeight: FontWeight.w500),
+          displaySmall: GoogleFonts.inter(
+              fontSize: 14,
+              color: ColorsManager.black,
+              fontWeight: FontWeight.w500)));
   static final ThemeData dark = ThemeData();
 }

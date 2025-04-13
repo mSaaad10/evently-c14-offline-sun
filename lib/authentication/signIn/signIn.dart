@@ -4,6 +4,7 @@ import 'package:evently/authentication/widgets/custom_text_form_field.dart';
 import 'package:evently/core/resources/assets_manager.dart';
 import 'package:evently/core/resources/colors_manager.dart';
 import 'package:evently/core/widgets/custom_button.dart';
+import 'package:evently/core/widgets/custom_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +28,7 @@ class _SignInState extends State<SignIn> {
             children: [
               Expanded(
                 child: Image.asset(
-                  imagesAssets.logo,
+                  ImagesAssets.logo,
                 ),
               ),
               SizedBox(
@@ -58,19 +59,19 @@ class _SignInState extends State<SignIn> {
                       onClick: () {},
                     ),
                     SizedBox(
-                      height: 16.h,
+                      height: 8.h,
                     ),
                     CustomElevatedButton(
                       title: "Sign-In",
                       onClick: () {},
                     ),
                     SizedBox(
-                      height: 16.h,
+                      height: 8.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Don’t Have Account ? "),
+                        const Text("Don’t Have Account? "),
                         CustomTextButton(
                           title: "Create Account",
                           onClick: () {},
@@ -80,9 +81,9 @@ class _SignInState extends State<SignIn> {
                     SizedBox(
                       height: 8.h,
                     ),
-                    buildOrWidget(),
+                    CustomDivider(text: "Or"),
                     SizedBox(
-                      height: 8.h,
+                      height: 16.h,
                     ),
                     CustomButton(title: "Login With Google", onClick: () {}),
                   ],

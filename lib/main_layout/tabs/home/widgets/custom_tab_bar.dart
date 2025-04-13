@@ -1,12 +1,22 @@
-import 'package:evently/DM/categort_DM.dart';
-import 'package:evently/core/resources/colors_manager.dart';
-import 'package:evently/core/resources/constant_manager.dart';
+import 'package:evently/data/DM/categort_DM.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTabBar extends StatefulWidget {
-  const CustomTabBar({super.key});
+  const CustomTabBar(
+      {super.key,
+      required this.categories,
+      required this.selectedTabBgColor,
+      required this.unSelectedTabBgColor,
+      required this.selectedTabContentColor,
+      required this.unSelectedTabContentColor});
+
+  final List<CategoryDM> categories;
+  final Color selectedTabBgColor;
+  final Color unSelectedTabBgColor;
+  final Color selectedTabContentColor;
+  final Color unSelectedTabContentColor;
 
   @override
   State<CustomTabBar> createState() => _CustomTabBarState();
@@ -18,24 +28,24 @@ class _CustomTabBarState extends State<CustomTabBar> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: ConstantManager.categories.length,
+      length: widget.categories.length,
       child: TabBar(
           onTap: _onTabBarItemClicked,
           isScrollable: true,
 
           /// get index of mapping category == index clicked tab ? selected
-          tabs: ConstantManager.categories
+          tabs: widget.categories
               .map((categoryDM) => buildTabComponent(
                     categoryDM: categoryDM,
                     isSelected:
-                        ConstantManager.categories.indexOf(categoryDM) ==
-                            selectedIndex,
+                        widget.categories.indexOf(categoryDM) == selectedIndex,
                   ))
               .toList()),
     );
   }
 
   void _onTabBarItemClicked(int newIndex) {
+    print(newIndex);
     setState(() {
       selectedIndex = newIndex;
     });
@@ -44,17 +54,21 @@ class _CustomTabBarState extends State<CustomTabBar> {
   Widget buildTabComponent(
       {required CategoryDM categoryDM, required bool isSelected}) {
     return Container(
-      padding: REdgeInsets.symmetric(vertical: 10, horizontal: 12),
+      padding: REdgeInsets.symmetric(vertical: 8, horizontal: 16),
       decoration: BoxDecoration(
-          color: isSelected ? ColorsManager.light : Colors.transparent,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: ColorsManager.light, width: 1)),
+          color: isSelected
+              ? widget.selectedTabBgColor
+              : widget.unSelectedTabBgColor,
+          borderRadius: BorderRadius.circular(30.r),
+          border: Border.all(color: widget.selectedTabBgColor, width: 1)),
       child: Row(
         children: [
           SvgPicture.asset(
             categoryDM.iconPath,
             colorFilter: ColorFilter.mode(
-                isSelected ? ColorsManager.blue : ColorsManager.light,
+                isSelected
+                    ? widget.selectedTabContentColor
+                    : widget.unSelectedTabContentColor,
                 BlendMode.srcIn),
           ),
           SizedBox(
@@ -63,7 +77,9 @@ class _CustomTabBarState extends State<CustomTabBar> {
           Text(
             categoryDM.name,
             style: TextStyle(
-              color: isSelected ? ColorsManager.blue : ColorsManager.light,
+              color: isSelected
+                  ? widget.selectedTabContentColor
+                  : widget.unSelectedTabContentColor,
             ),
           )
         ],

@@ -23,13 +23,13 @@ class CustomButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(imagesAssets.google),
+            Image.asset(ImagesAssets.google),
             SizedBox(
               width: 8.w,
             ),
             Text(
-              "title",
-              style: Theme.of(context).textTheme.labelMedium,
+              title,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
         ),

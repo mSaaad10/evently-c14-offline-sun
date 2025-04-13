@@ -1,4 +1,5 @@
 import 'package:evently/core/resources/assets_manager.dart';
+import 'package:evently/core/routes/routes_manager.dart';
 import 'package:evently/main_layout/tabs/fav/favourite.dart';
 import 'package:evently/main_layout/tabs/home/home.dart';
 import 'package:evently/main_layout/tabs/maps/maps.dart';
@@ -22,13 +23,17 @@ class _MainLayoutState extends State<MainLayout> {
     return Scaffold(
       extendBody: true,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _createEvent,
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: tabs[selectedIndex],
       bottomNavigationBar: buildBottomNavBar(),
     );
+  }
+
+  void _createEvent() {
+    Navigator.pushNamed(context, RoutesManager.createEvent);
   }
 
   Widget buildBottomNavBar() {

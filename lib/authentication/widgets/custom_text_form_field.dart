@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFormField extends StatefulWidget {
+class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
       {super.key,
-      required this.label,
-      required this.prefixIcon,
+      this.label,
+      this.hint,
+      this.prefixIcon,
       this.suffixIcon,
       this.isSecure = false,
-      this.onClick});
+      this.onClick,
+      this.lines = 1});
 
-  final String label;
-  final IconData prefixIcon;
+  final String? label;
+  final String? hint;
+  final IconData? prefixIcon;
   final IconData? suffixIcon;
   bool isSecure;
   VoidCallback? onClick;
+  final int lines;
 
-  @override
-  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
-}
-
-class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: widget.isSecure,
+      maxLines: lines,
+      style: Theme.of(context).textTheme.displaySmall,
+      obscureText: isSecure,
       decoration: InputDecoration(
-        prefixIcon: Icon(widget.prefixIcon),
+        hintText: hint,
+        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         suffixIcon: IconButton(
-          onPressed: widget.onClick,
-          icon: Icon(widget.suffixIcon),
+          onPressed: onClick,
+          icon: Icon(suffixIcon),
         ),
-        labelText: widget.label,
+        labelText: label,
       ),
     );
   }

@@ -2,20 +2,25 @@ import 'package:flutter/material.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton(
-      {super.key, required this.title, required this.onClick});
+      {super.key,
+      required this.title,
+      required this.onClick,
+      this.alignment = Alignment.centerRight});
 
   final String title;
   final VoidCallback onClick;
+  final Alignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+        style: Theme.of(context).textButtonTheme.style?.copyWith(
+              alignment: alignment,
+            ),
         onPressed: onClick,
         child: Text(
           title,
           textAlign: TextAlign.end,
-          style: Theme.of(context).textTheme.titleSmall,
         ));
   }
 }

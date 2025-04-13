@@ -2,7 +2,6 @@ import 'package:evently/authentication/widgets/custom_elevated_button.dart';
 import 'package:evently/authentication/widgets/custom_text_button.dart';
 import 'package:evently/authentication/widgets/custom_text_form_field.dart';
 import 'package:evently/core/resources/assets_manager.dart';
-import 'package:evently/core/resources/colors_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +24,7 @@ class _SignUpState extends State<SignUp> {
       ),
       body: Column(
         children: [
-          Expanded(child: Image.asset(imagesAssets.logo)),
+          Expanded(child: Image.asset(ImagesAssets.logo)),
           SizedBox(
             height: 24.h,
           ),
@@ -77,10 +76,7 @@ class _SignUpState extends State<SignUp> {
                     children: [
                       Text(
                         "Already Have Account?",
-                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                            color: ColorsManager.black,
-                            decoration: TextDecoration.none),
-                      ),
+                          style: Theme.of(context).textTheme.displaySmall),
                       CustomTextButton(
                         title: "Sign-In",
                         onClick: () {},
