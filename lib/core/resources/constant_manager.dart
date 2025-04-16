@@ -3,7 +3,7 @@ import 'package:evently/data/DM/categort_DM.dart';
 
 class ConstantManager {
   static List<CategoryDM> categoriesWithAll = [
-    CategoryDM(id: "1", name: "All", iconPath: SvgIconsAssets.allCategories),
+    CategoryDM(id: "1", name: "All", iconPath: SvgIconsAssets.selectedMaps),
     CategoryDM(id: "2", name: "Sport", iconPath: SvgIconsAssets.sportsCategory),
     CategoryDM(
         id: "3", name: "BirthDay", iconPath: SvgIconsAssets.birthDayCategory),

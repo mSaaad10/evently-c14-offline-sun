@@ -2,8 +2,8 @@ import 'package:evently/core/resources/colors_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class EventTitle extends StatelessWidget {
-  const EventTitle({super.key, required this.title});
+class EventTitleWidget extends StatelessWidget {
+  const EventTitleWidget({super.key, required this.title});
 
   final String title;
 

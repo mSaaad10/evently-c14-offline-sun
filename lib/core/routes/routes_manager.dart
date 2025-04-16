@@ -1,7 +1,7 @@
 import 'package:evently/authentication/signIn/signIn.dart';
 import 'package:evently/authentication/signUp/signUp.dart';
+import 'package:evently/create_event/create_event_screen.dart';
 import 'package:evently/main_layout/main_layout.dart';
-import 'package:evently/main_layout/screens/create_event/create_event_screen.dart';
 import 'package:flutter/cupertino.dart';
 
 class RoutesManager {

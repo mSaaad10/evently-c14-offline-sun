@@ -1,9 +1,9 @@
 import 'package:evently/core/resources/assets_manager.dart';
 import 'package:evently/core/resources/colors_manager.dart';
 import 'package:evently/core/resources/constant_manager.dart';
+import 'package:evently/core/widgets/custom_event_widget.dart';
+import 'package:evently/core/widgets/custom_tab_bar.dart';
 import 'package:evently/data/DM/eventDM.dart';
-import 'package:evently/main_layout/tabs/home/widgets/custom_tab_bar.dart';
-import 'package:evently/main_layout/tabs/home/widgets/event_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,8 +40,9 @@ class Home extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Icon(
-                      Icons.location_pin,
+                    Icon(
+                      Icons.location_on_outlined,
+                      color: Theme.of(context).colorScheme.outline,
                     ),
                     Text("Cairo, Egypt",
                         style: Theme.of(context).textTheme.titleSmall)
@@ -52,9 +53,10 @@ class Home extends StatelessWidget {
                 ),
                 CustomTabBar(
                   categories: ConstantManager.categoriesWithAll,
-                  selectedTabBgColor: ColorsManager.light,
+                  selectedTabBgColor: Theme.of(context).colorScheme.secondary,
                   unSelectedTabBgColor: Colors.transparent,
-                  selectedTabContentColor: ColorsManager.blue,
+                  selectedTabContentColor:
+                      Theme.of(context).colorScheme.onSecondary,
                   unSelectedTabContentColor: ColorsManager.light,
                 ),
               ],
@@ -63,7 +65,7 @@ class Home extends StatelessWidget {
         ),
         Expanded(
           child: ListView.builder(
-            itemBuilder: (context, index) => EventComponent(
+            itemBuilder: (context, index) => CustomEventWidget(
               eventDM: EventDM(
                 title: "title",
                 description: "description",

@@ -1,9 +1,10 @@
+import 'package:evently/authentication/widgets/custom_elevated_button.dart';
 import 'package:evently/authentication/widgets/custom_text_button.dart';
 import 'package:evently/authentication/widgets/custom_text_form_field.dart';
 import 'package:evently/core/resources/assets_manager.dart';
 import 'package:evently/core/resources/colors_manager.dart';
 import 'package:evently/core/resources/constant_manager.dart';
-import 'package:evently/main_layout/tabs/home/widgets/custom_tab_bar.dart';
+import 'package:evently/core/widgets/custom_tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +28,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
         padding: REdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
                 height: 16.h,
@@ -111,6 +112,13 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                   CustomTextButton(
                       title: "Choose Time", onClick: _selectEventTime)
                 ],
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              CustomElevatedButton(title: "Create Event", onClick: () {}),
+              SizedBox(
+                height: 24.h,
               ),
             ],
           ),
